@@ -16,6 +16,8 @@ const deploy = async () => {
 
     console.log('Attempting to deploy from account', deployingAccount)
 
+    console.log(JSON.stringify(abi))
+
     const result = await new web3.eth.Contract(abi)
         .deploy({ data: object })
         .send({ gas: '1000000', from: deployingAccount })
